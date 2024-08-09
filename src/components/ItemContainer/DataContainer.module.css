@@ -1,0 +1,42 @@
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    background-color: #f0f0f0; /* Light gray for a clean look */
+    margin: 50px auto;
+    border-radius: 10px; /* Rounded corners for a soft feel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .content1 {
+    gap: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    background-color: #bdbdbd; /* Dark slate for a sophisticated header */
+    color: #212121; /* Light text color for contrast */
+    height: 80px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .content1 h3 {
+    font-size: 2rem;
+    font-weight: 600; /* Bold text for emphasis */
+  }
+  
+  .content2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff; /* White background for clarity */
+    padding: 20px 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  

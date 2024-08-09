@@ -1,0 +1,9 @@
+.heading{
+    background-color: #17153B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #C8ACD6;
+    font-family: 'open sans';
+    width: 100%;
+  }
