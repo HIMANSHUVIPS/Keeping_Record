@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "./DataContainer.module.css";
 import Items from './Items';
-const DataContainer = () => {
+const DataContainer = ({data ,handleClick ,handleDelete}) => {
   return (
     <div className={styles.content}>
           <div className={styles.content1}>
@@ -10,7 +10,7 @@ const DataContainer = () => {
             <h3 className="remove">Remove</h3>
           </div>
          
-            <Items/>
+            <Items data={data} handleClick={handleClick} handleDelete={handleDelete}/>
           
         </div>
   )
