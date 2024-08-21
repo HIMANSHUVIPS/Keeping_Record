@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import Heading from "./components/Heading";
 import AddInput from "./components/AddInput";
 import DataContainer from "./components/ItemContainer/DataContainer";
+import { Items_Context } from "./store/Data.context";
 
 const App = () => {
   const data = [
@@ -11,48 +12,29 @@ const App = () => {
     { id: 3, name: "Bob", email: "verma@gamil.com" },
   ];
   const [inputVal, setInputVal] = useState(data);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+ 
 
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-  const handleClick = () => {
+  const addItem = (name,email) => {
     const newVal = { id: inputVal.length + 1, name, email };
     // const updateData = [...inputVal, newVal];
     // setInputVal(updateData);
-    setInputVal((currVal)=>[
-      ...currVal,newVal
-    ]);
-    setName("");
-    setEmail("");
+    setInputVal((currVal) => [...currVal, newVal]);
   };
-  const handleDelete = (CurrentId) =>{
+  const deleteItem = (CurrentId) => {
     console.log(CurrentId);
     let newData = inputVal;
-    newData = newData.filter((item)=>item.id!=CurrentId);
+    newData = newData.filter((item) => item.id != CurrentId);
     setInputVal(newData);
-  }
+  };
   return (
-    <>
+    <Items_Context.Provider value={{inputVal,addItem,deleteItem}}>
       <div className={styles.container}>
         <Heading />
-        <AddInput
-          setInputVal={setInputVal}
-          handleEmailChange={handleEmailChange}
-          handleNameChange={handleNameChange}
-          handleClick={handleClick}
-          name={name}
-          email={email}
-        />
-        <DataContainer data={inputVal} handleDelete={handleDelete}/>
+        <AddInput/>
+        <DataContainer/>
       </div>
-    </>
+    </Items_Context.Provider>
   );
 };
-
 
 export default App;
