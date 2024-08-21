@@ -22,8 +22,11 @@ const App = () => {
   };
   const handleClick = () => {
     const newVal = { id: inputVal.length + 1, name, email };
-    const updateData = [...inputVal, newVal];
-    setInputVal(updateData);
+    // const updateData = [...inputVal, newVal];
+    // setInputVal(updateData);
+    setInputVal((currVal)=>[
+      ...currVal,newVal
+    ]);
     setName("");
     setEmail("");
   };
